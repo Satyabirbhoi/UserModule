@@ -31,8 +31,8 @@ public class userService {
         return UserRepo.findById(id).orElse(null);
     }
 
-    public User getUsersByNumber(String num){
-        return  UserRepo.findByMobile(num).orElse(null);
+    public List<User> getUsersByNumber(String num){
+        return  UserRepo.findByMobile(num);
     }
 
     public String deleteUser(int id) {

@@ -14,12 +14,12 @@ public class UserController {
     private userService service;
 
     @PostMapping("/createUser")
-    public User createBook(@RequestBody User user) {
+    public User createUser(@RequestBody User user) {
         return service.saveUser(user);
     }
 
     @PostMapping("/createUsers")
-    public List<User> createBooks(@RequestBody List<User> users){
+    public List<User> createUsers(@RequestBody List<User> users){
         return service.saveUsers(users);
     }
 
@@ -41,9 +41,9 @@ public class UserController {
     }
 
     @PostMapping("/UserByNumber")
-    public User UserByNumber(@RequestBody User user) {
+    public List<User> UserByNumber(@RequestBody User user) {
         String mob = user.getMobile();
-        return  service.getUsersByNumber(mob);
+        return service.getUsersByNumber(mob);
     }
 
     @PostMapping("/updateUser")

@@ -15,5 +15,5 @@ public interface UserRepo extends JpaRepository<User, Integer> {
 
     Optional <User> findById(int id);
 
-    Optional <User> findByMobile(String mobile);
+    List <User> findByMobile(String mobile);
 }
